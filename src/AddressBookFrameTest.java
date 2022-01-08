@@ -10,8 +10,6 @@ import static org.junit.Assert.*;
 
 public class AddressBookFrameTest {
 
-    //FIXME should be a test for the addressBook class
-
     private AddressBook addressBook;
     private BuddyInfo buddy1;
     private BuddyInfo buddy2;
@@ -31,7 +29,7 @@ public class AddressBookFrameTest {
         addressBook.save("testBasic.txt");
         DefaultListModel<BuddyInfo> myBuddiesExport = addressBook.getBuddies();
 
-        //addressBook = new AddressBook(); //FIXME why doesn't it work when you create a new book?
+        //addressBook = new AddressBook();
         addressBook.importAddressBook("testBasic.txt");
         DefaultListModel<BuddyInfo> myBuddiesImport = addressBook.getBuddies();
 
@@ -50,13 +48,13 @@ public class AddressBookFrameTest {
         assertArrayEquals(myBuddiesExport.toArray(), myBuddiesImport.toArray());
     }*/
 
-    @Test //FIXME am I testing this properly?
+    @Test
     public void checkImportExportXML() throws IOException, ParserConfigurationException, SAXException {
-        addressBook.exportToXMLFile("testXML.xml");
+        addressBook.exportToXMLFile("sampleAddress.xml");
         DefaultListModel<BuddyInfo> myBuddiesExport = addressBook.getBuddies();
         Object[] before = addressBook.getBuddies().toArray();
 
-        addressBook.importFromXMLFile("testXML.xml");
+        addressBook.importFromXMLFile("sampleAddress.xml");
         //BuddyInfo buddy3 = new BuddyInfo("Bob", "123 Pizza Drive", "613-123-4567");
         //addressBook.addBuddy(buddy3);
 
