@@ -38,7 +38,7 @@ public class AddressBook extends DefaultHandler implements Serializable{
      * Return the address book in XML format
      * @return XML format of the book
      */
-    public String toXML() throws IOException {
+    public String toXML(){
         String XMLText;
         XMLText = "<?xml version='1.0' encoding='UTF-8'?>";
         XMLText += "<AddressBook>";
@@ -118,11 +118,9 @@ public class AddressBook extends DefaultHandler implements Serializable{
         this.reset();
 
         DefaultHandler dh = new DefaultHandler(){
-            AddressBook addressBook; //FIXME is there a way to do it without creating new book? make addressBook static?
-            //AddressBookFrame frame;
+            AddressBook addressBook; //FIXME is there a way to do it without creating new book?
             public void startDocument(){
                 addressBook = new AddressBook();
-                //frame = new AddressBookFrame();
             }
 
             public void startElement(String uri, String localName, String qName, Attributes a){

@@ -1,5 +1,3 @@
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.Serializable;
 
 public class BuddyInfo implements Serializable {
